@@ -10,22 +10,32 @@ public class Calculator {
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.print("Enter your first number: ");
-		double firstNumber = input.nextDouble();
-		System.out.print("Enter yout second number: ");
-		double secondNumber = input.nextDouble();
-		System.out.print("Would you like to multiple, divide, add or subtract these numbers? ");
-		String operation = input.next();
-		
-		if (operation.charAt(0) == 'm' || operation.charAt(0) == 'M') {
-			multiply(firstNumber, secondNumber);
-		} else if (operation.charAt(0) == 'd' || operation.charAt(0) == 'D') {
-			divide(firstNumber, secondNumber);
-		} else if (operation.charAt(0) == 's' || operation.charAt(0) == 'S') {
-			subtract(firstNumber, secondNumber);
-		} else if (operation.charAt(0) == 'a' || operation.charAt(0) == 'A') {
-			add(firstNumber, secondNumber);
+		String yesOrNo = "yes";
+		while (yesOrNo.charAt(0) == 'y' || yesOrNo.charAt(0) == 'Y') {			
+			
+			System.out.print("Enter your first number: ");
+			double firstNumber = input.nextDouble();
+			System.out.print("Enter yout second number: ");
+			double secondNumber = input.nextDouble();
+			System.out.print("Would you like to multiple, divide, add or subtract these numbers? ");
+			String operation = input.next();
+			
+			if (operation.charAt(0) == 'm' || operation.charAt(0) == 'M') {
+				multiply(firstNumber, secondNumber);
+			} else if (operation.charAt(0) == 'd' || operation.charAt(0) == 'D') {
+				divide(firstNumber, secondNumber);
+			} else if (operation.charAt(0) == 's' || operation.charAt(0) == 'S') {
+				subtract(firstNumber, secondNumber);
+			} else if (operation.charAt(0) == 'a' || operation.charAt(0) == 'A') {
+				add(firstNumber, secondNumber);
+			}		
+			
+			System.out.print("Do you want to calculate again? ");
+			yesOrNo = input.next();	
+			System.out.println();
 		}
+		
+		System.out.println("Hope you enjoyed this stupid-ass calculator");
 	}
 	
 	// Calculates and displays the multiplication of two numbers
